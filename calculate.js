@@ -19,36 +19,42 @@ function calculate(operation, firstNum, secondNum) {
     || operation === 'modulus';
   
   if (isAddition) {
-    return num1 + num2;
+    return performCalculation(add, num1, num2)
   } else if (isSubtraction) {
-    return num1 - num2;
+    return performCalculation(subtract, num1, num2)
   } else if (isMultiplication) {
-    return num1 * num2;
+    return performCalculation(multiply, num1, num2)
   } else if (isDivision) {
-    return num1 / num2;
+    return performCalculation(divide, num1, num2)
   } else if (isModulus) {
-    return num1 % num2;
+    return performCalculation(modulus, num1, num2)
   } else {
     return `Sorry, that's not a mathematical operation!`
   }
 }
 
-function add() {
+function add(num1, num2) {
+  return num1 + num2;
 }
 
-function subtract() {
+function subtract(num1, num2) {
+  return num1 - num2;
 }
 
-function multiply() {
+function multiply(num1, num2) {
+  return num1 * num2;
 }
 
-function divide() {
+function divide(num1, num2) {
+  return num1 / num2;
 }
 
-function modulus() {
+function modulus(num1, num2) {
+  return num1 % num2;
 }
 
-function performCalculation() {
+function performCalculation(op, num1, num2) {
+  return op(num1, num2);
 }
 
 
